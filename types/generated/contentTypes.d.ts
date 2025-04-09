@@ -372,7 +372,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
-    displayName: 'blog';
+    description: '';
+    displayName: '\u0411\u043B\u043E\u0433';
     pluralName: 'blogs';
     singularName: 'blog';
   };
@@ -401,7 +402,7 @@ export interface ApiCalendarCalendar extends Struct.CollectionTypeSchema {
   collectionName: 'calendars';
   info: {
     description: '';
-    displayName: 'Calendar';
+    displayName: '\u041A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C';
     pluralName: 'calendars';
     singularName: 'calendar';
   };
@@ -430,7 +431,8 @@ export interface ApiCalendarCalendar extends Struct.CollectionTypeSchema {
 export interface ApiContactContact extends Struct.CollectionTypeSchema {
   collectionName: 'contacts';
   info: {
-    displayName: 'contact';
+    description: '';
+    displayName: '\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -460,7 +462,8 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
 export interface ApiEmployeeEmployee extends Struct.CollectionTypeSchema {
   collectionName: 'employees';
   info: {
-    displayName: 'Employee';
+    description: '';
+    displayName: '\u0420\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u0438';
     pluralName: 'employees';
     singularName: 'employee';
   };
@@ -491,7 +494,8 @@ export interface ApiEmployeeEmployee extends Struct.CollectionTypeSchema {
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
-    displayName: 'event';
+    description: '';
+    displayName: '\u041C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F';
     pluralName: 'events';
     singularName: 'event';
   };
@@ -520,7 +524,7 @@ export interface ApiRecordRecord extends Struct.CollectionTypeSchema {
   collectionName: 'records';
   info: {
     description: '';
-    displayName: 'record';
+    displayName: '\u0417\u0430\u043F\u0438\u0441\u0438';
     pluralName: 'records';
     singularName: 'record';
   };
