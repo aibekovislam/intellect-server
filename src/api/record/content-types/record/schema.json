@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "records",
+  "info": {
+    "singularName": "record",
+    "pluralName": "records",
+    "displayName": "record",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "class": {
+      "type": "integer"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

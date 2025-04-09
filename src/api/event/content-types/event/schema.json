@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "cabinet": {
+      "type": "string"
+    },
+    "calendar": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::calendar.calendar",
+      "inversedBy": "events"
+    }
+  }
+}
