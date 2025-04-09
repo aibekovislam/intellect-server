@@ -14,8 +14,8 @@
     "title": {
       "type": "string"
     },
-    "time": {
-      "type": "datetime"
+    "time_start": {
+      "type": "time"
     },
     "cabinet": {
       "type": "string"
@@ -25,6 +25,9 @@
       "relation": "manyToOne",
       "target": "api::calendar.calendar",
       "inversedBy": "events"
+    },
+    "time_end": {
+      "type": "time"
     }
   }
 }

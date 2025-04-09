@@ -11,14 +11,14 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "events": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::event.event",
       "mappedBy": "calendar"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
