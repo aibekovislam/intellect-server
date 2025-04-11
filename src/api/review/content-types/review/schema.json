@@ -47,11 +47,6 @@
     },
     "stars": {
       "type": "integer"
-    },
-    "sub_reviews": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sub-review.sub-review"
     }
   }
 }
