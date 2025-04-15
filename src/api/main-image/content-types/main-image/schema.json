@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_images",
+  "info": {
+    "singularName": "main-image",
+    "pluralName": "main-images",
+    "displayName": "Главная страница",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "video": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

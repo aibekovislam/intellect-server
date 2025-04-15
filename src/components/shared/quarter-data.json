@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shared_quarter_data",
+  "info": {
+    "displayName": "quarter-data",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "q2": {
+      "type": "enumeration",
+      "enum": [
+        "diamond",
+        "gold",
+        "null"
+      ]
+    },
+    "q1": {
+      "type": "enumeration",
+      "enum": [
+        "diamond",
+        "gold",
+        "null"
+      ]
+    },
+    "q3": {
+      "type": "enumeration",
+      "enum": [
+        "diamond",
+        "gold",
+        "null"
+      ]
+    },
+    "q4": {
+      "type": "enumeration",
+      "enum": [
+        "diamond",
+        "gold",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students_raitings",
+  "info": {
+    "singularName": "students-raiting",
+    "pluralName": "students-raitings",
+    "displayName": "ЕЧТ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "class": {
+      "type": "string"
+    },
+    "parallel": {
+      "type": "string"
+    },
+    "quarters": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.quarter-data"
+    },
+    "average_mark": {
+      "type": "string"
+    }
+  }
+}

@@ -483,6 +483,7 @@ export interface ApiEmployeeEmployee extends Struct.CollectionTypeSchema {
       'api::employee.employee'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
@@ -515,6 +516,169 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     time_end: Schema.Attribute.Time;
     time_start: Schema.Attribute.Time;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
+  collectionName: 'gallerys';
+  info: {
+    displayName: '\u0413\u0430\u043B\u043B\u0435\u0440\u0435\u044F';
+    pluralName: 'gallerys';
+    singularName: 'gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery.gallery'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHighlightHighlight extends Struct.CollectionTypeSchema {
+  collectionName: 'highlights';
+  info: {
+    description: '';
+    displayName: 'Highlights';
+    pluralName: 'highlights';
+    singularName: 'highlight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::highlight.highlight'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    statistikas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statistic.statistic'
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInviteInvite extends Struct.CollectionTypeSchema {
+  collectionName: 'invites';
+  info: {
+    description: '';
+    displayName: '\u041F\u0440\u0438\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435 (\u0433\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430)';
+    pluralName: 'invites';
+    singularName: 'invite';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invite.invite'
+    > &
+      Schema.Attribute.Private;
+    organizators: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organizatory.organizatory'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    time: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMainImageMainImage extends Struct.CollectionTypeSchema {
+  collectionName: 'main_images';
+  info: {
+    description: '';
+    displayName: '\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430';
+    pluralName: 'main-images';
+    singularName: 'main-image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::main-image.main-image'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'files' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ApiOrganizatoryOrganizatory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'organizatories';
+  info: {
+    displayName: '\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u044B';
+    pluralName: 'organizatories';
+    singularName: 'organizatory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organizatory.organizatory'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -583,6 +747,69 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     stars: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStatisticStatistic extends Struct.CollectionTypeSchema {
+  collectionName: 'statistics';
+  info: {
+    displayName: '\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430';
+    pluralName: 'statistics';
+    singularName: 'statistic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statistic.statistic'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStudentsRaitingStudentsRaiting
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'students_raitings';
+  info: {
+    description: '';
+    displayName: '\u0415\u0427\u0422';
+    pluralName: 'students-raitings';
+    singularName: 'students-raiting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    average_mark: Schema.Attribute.String;
+    class: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::students-raiting.students-raiting'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    parallel: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    quarters: Schema.Attribute.Component<'shared.quarter-data', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1103,8 +1330,15 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::event.event': ApiEventEvent;
+      'api::gallery.gallery': ApiGalleryGallery;
+      'api::highlight.highlight': ApiHighlightHighlight;
+      'api::invite.invite': ApiInviteInvite;
+      'api::main-image.main-image': ApiMainImageMainImage;
+      'api::organizatory.organizatory': ApiOrganizatoryOrganizatory;
       'api::record.record': ApiRecordRecord;
       'api::review.review': ApiReviewReview;
+      'api::statistic.statistic': ApiStatisticStatistic;
+      'api::students-raiting.students-raiting': ApiStudentsRaitingStudentsRaiting;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

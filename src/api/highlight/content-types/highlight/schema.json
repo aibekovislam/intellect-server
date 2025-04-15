@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "highlights",
+  "info": {
+    "singularName": "highlight",
+    "pluralName": "highlights",
+    "displayName": "Highlights",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "text"
+    },
+    "statistikas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::statistic.statistic"
+    }
+  }
+}

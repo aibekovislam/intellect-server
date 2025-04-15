@@ -1,0 +1,7 @@
+/**
+ * students-raiting router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::students-raiting.students-raiting');
