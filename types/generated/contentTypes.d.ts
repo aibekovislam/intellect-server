@@ -609,10 +609,8 @@ export interface ApiInviteInvite extends Struct.CollectionTypeSchema {
       'api::invite.invite'
     > &
       Schema.Attribute.Private;
-    organizators: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::organizatory.organizatory'
-    >;
+    organizator1: Schema.Attribute.Component<'shared.organizators', false>;
+    organizator2: Schema.Attribute.Component<'shared.organizators', false>;
     publishedAt: Schema.Attribute.DateTime;
     time: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -651,37 +649,6 @@ export interface ApiMainImageMainImage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     video: Schema.Attribute.Media<'files' | 'videos'> &
       Schema.Attribute.Required;
-  };
-}
-
-export interface ApiOrganizatoryOrganizatory
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'organizatories';
-  info: {
-    displayName: '\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u044B';
-    pluralName: 'organizatories';
-    singularName: 'organizatory';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::organizatory.organizatory'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    role: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -782,6 +749,37 @@ export interface ApiStatisticStatistic extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStudentStudent extends Struct.CollectionTypeSchema {
+  collectionName: 'students';
+  info: {
+    displayName: '\u0421\u0442\u0443\u0434\u0435\u043D\u0442\u044B';
+    pluralName: 'students';
+    singularName: 'student';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    average_mark: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::student.student'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    parallel: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    quarters: Schema.Attribute.Component<'shared.quarter-data', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStudentsRaitingStudentsRaiting
   extends Struct.CollectionTypeSchema {
   collectionName: 'students_raitings';
@@ -795,8 +793,6 @@ export interface ApiStudentsRaitingStudentsRaiting
     draftAndPublish: true;
   };
   attributes: {
-    average_mark: Schema.Attribute.String;
-    class: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -806,10 +802,9 @@ export interface ApiStudentsRaitingStudentsRaiting
       'api::students-raiting.students-raiting'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    parallel: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    quarters: Schema.Attribute.Component<'shared.quarter-data', false>;
+    students: Schema.Attribute.Relation<'oneToMany', 'api::student.student'>;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1334,10 +1329,10 @@ declare module '@strapi/strapi' {
       'api::highlight.highlight': ApiHighlightHighlight;
       'api::invite.invite': ApiInviteInvite;
       'api::main-image.main-image': ApiMainImageMainImage;
-      'api::organizatory.organizatory': ApiOrganizatoryOrganizatory;
       'api::record.record': ApiRecordRecord;
       'api::review.review': ApiReviewReview;
       'api::statistic.statistic': ApiStatisticStatistic;
+      'api::student.student': ApiStudentStudent;
       'api::students-raiting.students-raiting': ApiStudentsRaitingStudentsRaiting;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

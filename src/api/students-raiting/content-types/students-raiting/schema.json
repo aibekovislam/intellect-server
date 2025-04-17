@@ -11,22 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "class": {
-      "type": "string"
-    },
-    "parallel": {
-      "type": "string"
-    },
-    "quarters": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.quarter-data"
-    },
-    "average_mark": {
-      "type": "string"
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student"
     }
   }
 }

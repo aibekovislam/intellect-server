@@ -17,10 +17,15 @@
     "title": {
       "type": "string"
     },
-    "organizators": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::organizatory.organizatory"
+    "organizator1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.organizators"
+    },
+    "organizator2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.organizators"
     }
   }
 }

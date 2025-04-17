@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Студенты"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "parallel": {
+      "type": "string"
+    },
+    "average_mark": {
+      "type": "decimal"
+    },
+    "quarters": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.quarter-data"
+    }
+  }
+}
