@@ -1,13 +1,16 @@
-/**
- * students-raiting controller
- */
-
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::students-raiting.students-raiting', ({ strapi }) => ({
   async find(ctx) {
+    const { locale = 'en' } = ctx.query;
+
     const entries = await strapi.entityService.findMany('api::students-raiting.students-raiting', {
-      populate: '*',
+      populate: {
+        students: {
+          populate: ['quarters'],
+        },
+      },
+      locale,
     });
 
     const sorted = entries.map((entry) => ({
