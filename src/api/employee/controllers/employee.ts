@@ -8,7 +8,7 @@ export default factories.createCoreController('api::employee.employee', ({ strap
     async find(ctx) {
       ctx.query = {
         ...ctx.query,
-        sort: ['order:desc'],
+        sort: ['order:asc'],
       };
   
       const { data, meta } = await super.find(ctx);
